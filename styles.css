@@ -1,0 +1,853 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Genel arka plan rengini belirledim */
+}
+
+header {
+    background-color: #ffffff; /* Navbar arka plan rengini belirledim */
+    padding: 10px 0;
+    height: 80px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    color: #ffffff;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f9f9f9; /* Menü öğeleri rengi #f9f9f9 olarak değiştirildi */
+    font-weight: bold;
+}
+
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    color: #ffffff;;
+    
+}
+
+.navbar-brand img {
+    height: 90px;
+    width: auto;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul .logo {
+        width: 120px;
+        margin-bottom: 10px;
+    }
+
+    #menu-icon {
+        font-size: 30px;
+        display: block;
+    }
+
+    #nav-list {
+        display: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    #nav-list.show {
+        display: block;
+    }
+
+    #nav-list li {
+        margin: 8px 0;
+    }
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.welcome-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #f9f9f9; /* Başlık rengini #f9f9f9 olarak değiştirdim */
+}
+
+footer {
+    background-color: #333; /* Arka plan rengi koyu gri */
+    color: #fff !important; /* Metin rengi beyaz ve bu stilin öncelikli olmasını sağla */
+    text-align: center;
+    padding: 15px;
+}
+
+
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #f8f9fa;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 10px 0;
+    }
+
+    .navbar-nav .nav-item a {
+        padding: 10px 20px;
+    }
+}
+
+@keyframes logoShake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+#logo {
+    animation: logoShake 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+    width: 150px;
+    height: auto;
+}
+
+#welcome-text {
+    font-size: 1.5em;
+    color: #f9f9f9; /* Yazının rengini #f9f9f9 olarak değiştirdim */
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#page-content {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity s ease, transform 1s ease, visibility 1s linear 1s;
+}
+
+#page-content.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#services {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.service {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+}
+
+.service h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.service p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+#about-us {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#about-us p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+#about-us h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#about-us ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about-us ul li {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+#about-us ul li::before {
+    content: "✔️ ";
+    color: #28a745;
+}
+
+.welcome-text {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+.welcome-text h1 {
+    font-size: 2.8em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.welcome-text p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.welcome-text p br {
+    margin-bottom: 20px;
+}
+
+#contact {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+#contact h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #302f2f;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-field input, .form-field textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-field input:focus, .form-field textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 15px;
+}
+
+p strong {
+    color: #007bff;
+}
+
+@media (min-width: 768px) {
+    #contact {
+        padding: 40px 50px;
+    }
+
+    button {
+        width: auto;
+        margin-top: 20px;
+    }
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+p {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 20px;
+}
+
+p strong {
+    color: #007bff;
+}
+
+@media (min-width: 768px) {
+    #contact {
+        padding: 60px 50px;
+    }
+
+    button {
+        width: auto;
+        margin-top: 20px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 15px;
+    font-size: 36px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+.social-icons a:nth-child(1):hover {
+    color: #E4405F;
+}
+
+.social-icons a:nth-child(2):hover {
+    color: #1DA1F2;
+}
+
+.social-icons a:nth-child(3):hover {
+    color: #D44638;
+}
+
+.social-icons a:nth-child(4):hover {
+    color: #25D366;
+}
+
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.carousel-container {
+    width: 50%;
+}
+
+.text-container {
+    width: 45%;
+    text-align: right;
+}
+
+.text-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.text-container p {
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.carousel-item img {
+    width: 600px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-prev-icon {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.carousel-control-next-icon {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent white;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+@media (max-width: 768px) {
+    /* Ana container'ı dikey hizalayalım */
+    #home {
+        display: flex;
+        flex-direction: column; /* Dikey hizalama */
+        justify-content: flex-start; /* Yazılar üstte kalsın */
+        align-items: center; /* Ortalamayı sağla */
+        padding: 20px;
+    }
+
+    /* Carousel'in genişliğini %100 yapalım */
+    .carousel-container {
+        width: 100%; /* Carousel'in genişliği 100% */
+        margin-top: 20px; /* Yazıdan biraz boşluk bırak */
+    }
+
+    /* Yazı kısmını ortalayalım */
+    .text-container {
+        width: 100%; /* Yazının genişliği %100 */
+        text-align: center; /* Yazıyı ortala */
+    }
+
+    .text-container h1 {
+        font-size: 28px; /* Mobilde başlık boyutunu küçült */
+        margin-bottom: 15px; /* Altındaki boşluğu düzenle */
+    }
+
+    .text-container p {
+        font-size: 16px; /* Mobilde yazı boyutunu küçült */
+        line-height: 1.4;
+    }
+}
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #2b2828, #4a4646, #6e6666); /* Sağdan sola, koyu gri tonlarından açık gri tonlarına geçiş */
+}
+
+
+header {
+    background-color: #ffffff;
+    padding: 8px 0; /* Padding'i küçülttük */
+    height: 70px; /* Yüksekliği düşürdük */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 0 12px; /* Aradaki boşluğu azalttık */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f9f9f9;
+    font-weight: bold;
+}
+
+.navbar {
+    height: 70px; /* Navbar yüksekliğini azaltıyoruz */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px; /* Padding'i azaltıyoruz */
+}
+
+.navbar-brand img {
+    height: 70px; /* Logo yüksekliğini düşürdük */
+    width: auto;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 12px; /* Aradaki boşluğu küçülttük */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #menu-icon {
+        font-size: 28px; /* Menü ikonunu küçülttük */
+    }
+
+    #nav-list {
+        display: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    #nav-list.show {
+        display: block;
+    }
+
+    #nav-list li {
+        margin: 6px 0; /* Liste öğeleri arasındaki boşluğu küçülttük */
+    }
+}
+
+section {
+    padding: 40px 15px; /* Padding'i küçülttük */
+    text-align: center;
+    margin-top: 40px;
+}
+
+.welcome-text h1 {
+    font-size: 2em; /* Başlık boyutunu küçülttük */
+    margin-bottom: 8px;
+    color: #f9f9f9;
+}
+
+footer {
+    background-color: #333;
+    color: #444546;
+    text-align: center;
+    padding: 12px; /* Padding'i küçülttük */
+}
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #f8f9fa;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 8px 0; /* Öğeler arasındaki boşluğu düşürdük */
+    }
+
+    .navbar-nav .nav-item a {
+        padding: 8px 18px; /* Buton boyutunu küçülttük */
+    }
+}
+
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px; /* Padding'i küçülttük */
+}
+
+.carousel-container {
+    width: 45%; /* Carousel genişliğini daraltıyoruz */
+}
+
+.text-container {
+    width: 45%; /* Yazı kısmını daraltıyoruz */
+    text-align: right;
+}
+
+.text-container h1 {
+    font-size: 30px; /* Başlık boyutunu küçülttük */
+    margin-bottom: 15px; /* Altındaki boşluğu düzenledik */
+}
+
+.text-container p {
+    font-size: 16px; /* Yazı boyutunu küçülttük */
+    line-height: 1.4;
+}
+
+.carousel-item img {
+    width: 550px; /* Görselleri küçülttük */
+    height: 450px;
+    object-fit: cover;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 40px; /* Kontrolleri küçülttük */
+    height: 40px;
+}
+
+.carousel-control-prev-icon {
+    border-width: 8px 12px 8px 0;
+}
+
+.carousel-control-next-icon {
+    border-width: 8px 0 8px 12px;
+}
+
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .carousel-container {
+        width: 100%; /* Carousel'i tam genişlikte yapıyoruz */
+        margin-top: 15px;
+    }
+
+    .text-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .text-container h1 {
+        font-size: 24px; /* Başlık boyutunu daha da küçültüyoruz */
+        margin-bottom: 10px;
+    }
+
+    .text-container p {
+        font-size: 14px; /* Yazı boyutunu daha da küçültüyoruz */
+    }
+}
+
+/* Service section */
+#services {
+    background-color: #f9f9f9;
+    padding: 30px 15px; /* Padding'i düşürdük */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.8em; /* Başlık boyutunu küçülttük */
+    color: #333;
+    margin-bottom: 20px; /* Boşluğu küçülttük */
+}
+
+.service {
+    margin-bottom: 20px; /* Aradaki boşluğu azalttık */
+    padding: 15px; /* Padding'i küçülttük */
+}
+
+.service h3 {
+    font-size: 1.4em; /* Başlık boyutunu küçülttük */
+}
+
+.service p {
+    font-size: 0.9em; /* Yazı boyutunu küçülttük */
+}
+
+#about-us {
+    background-color: #fff;
+    padding: 30px 15px; /* Padding'i küçülttük */
+    text-align: center;
+}
+
+#about-us p {
+    font-size: 1em; /* Yazı boyutunu küçülttük */
+    color: #555;
+    line-height: 1.4;
+}
+
+#about-us h3 {
+    font-size: 1.4em; /* Başlık boyutunu küçülttük */
+}
+
+#about-us ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about-us ul li {
+    font-size: 1em; /* Yazı boyutunu küçülttük */
+    color: #555;
+}
+
+.welcome-text {
+    padding: 40px 15px; /* Padding'i küçülttük */
+}
+
+.welcome-text h1 {
+    font-size: 2.5em; /* Başlık boyutunu küçülttük */
+    color: #333;
+}
+
+.welcome-text p {
+    font-size: 1em; /* Yazı boyutunu küçülttük */
+}
+
+#contact {
+    padding: 25px 15px; /* Padding'i küçülttük */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    font-size: 1rem; /* Yazı boyutunu küçülttük */
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+/* Navbar arka planını beyaz yap */
+nav {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif bir gölge eklemek isteyebilirsiniz */
+}
